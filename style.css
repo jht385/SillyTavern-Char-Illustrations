@@ -1,0 +1,384 @@
+/* 聊天框内的插图展示容器 */
+.char-illustration-container {
+    margin: 12px 0 6px 0;
+    text-align: center;
+    width: 100%;
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* 单张插图卡片容器 */
+.char-illustration-card {
+    position: relative;
+    display: inline-block;
+    max-width: 95%;
+}
+
+.char-illustration-img {
+    max-width: 100%;
+    max-height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    object-fit: contain;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    display: block;
+}
+
+.char-illustration-img:hover {
+    transform: scale(1.01);
+}
+
+/* 快捷单张插图删除按钮 */
+.char-illustration-remove-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    background: rgba(230, 57, 70, 0.85);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    opacity: 0.3;
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    z-index: 10;
+    user-select: none;
+}
+
+.char-illustration-card:hover .char-illustration-remove-btn {
+    opacity: 1;
+}
+
+.char-illustration-remove-btn:hover {
+    background: #e63946;
+    transform: scale(1.15);
+}
+
+/* 扩展设置面板 */
+.ci-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 6px 0;
+}
+
+/* API 独立配置区卡片 */
+.ci-api-config-box {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ci-api-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.ci-api-row label {
+    font-size: 0.82em;
+    opacity: 0.85;
+}
+
+.ci-api-btn-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    width: 100%;
+}
+
+.ci-btn-standard {
+    white-space: nowrap !important;
+    padding: 6px 12px !important;
+    font-size: 0.85em !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+}
+
+.ci-status-box {
+    font-size: 0.82em;
+    line-height: 1.4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+}
+
+.ci-upload-box {
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* 规则语法说明样式 */
+.ci-rule-hint {
+    font-size: 0.78em;
+    line-height: 1.4;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: rgba(42, 157, 143, 0.15);
+    border: 1px solid rgba(42, 157, 143, 0.3);
+    color: #e0e0e0;
+}
+
+.ci-rule-hint code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1px 4px;
+    border-radius: 3px;
+    color: #ffd166;
+}
+
+.ci-preview-container {
+    max-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.ci-preview-container img {
+    max-height: 120px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.ci-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.ci-header-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.ci-mini-btn {
+    white-space: nowrap !important;
+    padding: 3px 8px !important;
+    font-size: 0.82em !important;
+    line-height: 1.4 !important;
+}
+
+.ci-btn-accent {
+    background: #2a9d8f !important;
+    color: #fff !important;
+}
+
+.ci-btn-danger {
+    background: #e63946 !important;
+    color: #fff !important;
+}
+
+/* 搜索栏结构 */
+.ci-search-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.ci-search-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.ci-search-input-wrapper input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-right: 26px !important;
+    font-size: 0.85em !important;
+}
+
+.ci-search-clear {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.ci-search-clear:hover {
+    color: #fff;
+}
+
+.ci-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.ci-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ci-thumb-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.ci-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ci-order-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.ci-order-btn {
+    padding: 1px 5px !important;
+    font-size: 0.7em !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 3px !important;
+    color: #fff !important;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.ci-order-btn:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.ci-card-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ci-edit-input {
+    width: 100% !important;
+    font-size: 0.85em !important;
+    padding: 4px 6px !important;
+    box-sizing: border-box !important;
+    color: #ffd166 !important;
+}
+
+.ci-card-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+    margin-top: 2px;
+}
+
+.ci-save-edit-btn {
+    background: #2a9d8f !important;
+    color: #fff !important;
+    padding: 3px 8px !important;
+    font-size: 0.78em !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+}
+
+.ci-del-btn {
+    background: #e63946 !important;
+    color: #fff !important;
+    padding: 3px 8px !important;
+    font-size: 0.78em !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+}
+
+/* 二次确认模态窗 */
+.ci-confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ci-confirm-content {
+    background: #222;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 360px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ci-confirm-content h3 {
+    margin: 0;
+    color: #ff6b6b;
+    font-size: 1.1em;
+}
+
+.ci-confirm-content p {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.ci-confirm-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 6px;
+}
