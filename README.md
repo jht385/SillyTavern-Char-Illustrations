@@ -16,5 +16,5 @@
 - 必须使用EDG、Chrome等带有V8引擎的浏览器
 - 插图生成会占用浏览器JS堆内存，一次生成太多插图会超出浏览器JS堆内存的动态分配上限而导致网页崩溃
 - 导入新配置会直接删除覆盖旧配置，无法撤回
-- 插图配置会存储在浏览器IndexedDB存储中，所以云酒馆无法互通需要单独配置
-- 如果插图过多超出了IndexedDB容量上限可能会发生网页崩溃，目前不清楚上限是多少
+- 插图配置会存储在SillyTavern/public/scripts/extensions/third-party/character-illustrations/user_images/位置
+
